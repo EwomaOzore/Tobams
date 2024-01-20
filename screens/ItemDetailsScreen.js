@@ -8,7 +8,7 @@ const ItemDetailsScreen = ({ route }) => {
     const itemDetails = {
         itemName: 'Chicken Stew',
         itemPrice: 30,
-        itemImage: require('../assets/product1.png'),
+        itemImage: require('../assets/image1.png'),
         description: 'Rare Eat Puff Puff Mix can be made into a deep-fried dough. They are made from yeast dough, shaped into balls and deep-fried until golden brown. It has a doughnut-like texture but slightly o....Read more',
         ingredients: ['Chicken', 'Spices', 'Vegetables'],
         nutritionalInfo: '...',
@@ -42,7 +42,7 @@ const ItemDetailsScreen = ({ route }) => {
     };
 
     return (
-        <ScrollView className="flex-1 bg-white p-4">
+        <ScrollView className="flex-1 bg-[#F9F9F9] p-4 pt-20">
             <Image source={itemDetails.itemImage} style={{ width: '100%', height: 200, resizeMode: 'contain' }} />
 
             <View className="mt-4">
@@ -50,7 +50,7 @@ const ItemDetailsScreen = ({ route }) => {
                     <Text className="text-2xl font-bold">{itemDetails.itemName}</Text>
                     <Text className="text-lg mt-2 text-[#DB3C25]">£{itemDetails.itemPrice}</Text>
                 </View>
-                <Text className="text-md mt-2">{itemDetails.description}</Text>
+                <Text className="text-md mt-2 mb-14 text-base">{itemDetails.description}</Text>
             </View>
 
             {renderDropdown('Ingredients', itemDetails.ingredients, showIngredients, setShowIngredients)}
@@ -65,11 +65,11 @@ const ItemDetailsScreen = ({ route }) => {
 
             <View className="flex-row items-center mt-4 justify-between">
                 <TouchableOpacity onPress={handleDecrement}>
-                    <Text className="bg-[#DB3C25] text-white text-2xl p-2"> - </Text>
+                    <Text className="bg-white text-black text-2xl p-2"> - </Text>
                 </TouchableOpacity>
                 <Text className="text-xl p-2">{quantity}</Text>
                 <TouchableOpacity onPress={handleIncrement}>
-                    <Text className="bg-[#DB3C25] text-white text-2xl p-2"> + </Text>
+                    <Text className="bg-white text-black text-2xl p-2"> + </Text>
                 </TouchableOpacity>
             </View>
 
@@ -84,10 +84,10 @@ const ItemDetailsScreen = ({ route }) => {
 
             <TouchableOpacity
                 onPress={handleSubscribeToPlan}
-                style={{ backgroundColor: '#DB3C25', marginTop: 10, padding: 13, borderRadius: 50, alignItems: 'center' }}
+                style={{ marginTop: 10, padding: 13, borderRadius: 50, alignItems: 'center', borderColor: '#DB3C25', marginBottom: 10 }}
             >
                 <View className="flex-row items-center">
-                    <Text className="text-white font-bold text-base">Subscribe to Plan</Text>
+                    <Text className="text-[#DB3C25] font-bold text-base">Subscribe to Plan</Text>
                 </View>
             </TouchableOpacity>
         </ScrollView>
